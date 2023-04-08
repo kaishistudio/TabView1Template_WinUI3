@@ -1,0 +1,72 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>App1</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Platforms>x86;x64;ARM64</Platforms>
+    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    <UseWinUI>true</UseWinUI>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Assets\WindowIcon.ico" />
+    <None Remove="Views\ListDetailDetailControl.xaml" />
+    <None Remove="Views\ListDetailPage.xaml" />
+    <None Remove="Views\Hamburger2.xaml" />
+    <None Remove="Views\MyTabContentControl.xaml" />
+    <None Remove="Views\Pages\WelcomePage.xaml" />
+    <None Remove="Views\SettingsPage.xaml" />
+    <None Remove="Views\Pages\ListPage\ListDetailDetailControl.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+    <PackageReference Include="CommunityToolkit.WinUI" Version="7.1.2" />
+    <PackageReference Include="CommunityToolkit.WinUI.UI.Controls" Version="7.1.2" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.4" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.3.230228005-preview1" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
+    <PackageReference Include="PInvoke.User32" Version="0.7.124" />
+    <PackageReference Include="WinUIEx" Version="2.1.0" />
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\ListDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\ListDetailDetailControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\MyTabContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\Hamburger2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Windows\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\Pages\WelcomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+</Project>

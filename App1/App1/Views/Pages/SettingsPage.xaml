@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="App1.Views.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:xaml="using:Microsoft.UI.Xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer Margin="20">
+        <StackPanel
+            x:Name="ContentArea">
+            <TextBlock x:Uid="Settings_Personalization" Style="{ThemeResource SubtitleTextBlockStyle}" />
+            <StackPanel Margin="0 5">
+                <TextBlock x:Uid="Settings_Theme" />
+
+                <StackPanel Margin="0 5">
+                    <RadioButton
+                        x:Uid="Settings_Theme_Light"
+                        IsChecked="{x:Bind settingsViewModel.IsLightSelected }"
+                        Command="{x:Bind settingsViewModel.SwitchThemeCommand}"
+                        FontSize="15"
+                        GroupName="AppTheme">
+                        <RadioButton.CommandParameter>
+                            <xaml:ElementTheme>Light</xaml:ElementTheme>
+                        </RadioButton.CommandParameter>
+                    </RadioButton>
+                    <RadioButton
+                        x:Uid="Settings_Theme_Dark"
+                        IsChecked="{x:Bind settingsViewModel.IsDarkSelected}"
+                        Command="{x:Bind settingsViewModel.SwitchThemeCommand}"
+                        FontSize="15"
+                        GroupName="AppTheme">
+                        <RadioButton.CommandParameter>
+                            <xaml:ElementTheme>Dark</xaml:ElementTheme>
+                        </RadioButton.CommandParameter>
+                    </RadioButton>
+                    <RadioButton
+                        x:Uid="Settings_Theme_Default"
+                        IsChecked="{x:Bind settingsViewModel.IsDefaultSelected }"
+                        Command="{x:Bind settingsViewModel.SwitchThemeCommand}"
+                        FontSize="15"
+                        GroupName="AppTheme">
+                        <RadioButton.CommandParameter>
+                            <xaml:ElementTheme>Default</xaml:ElementTheme>
+                        </RadioButton.CommandParameter>
+                    </RadioButton>
+                </StackPanel>
+            </StackPanel>
+            <CheckBox x:Uid="IsAcrylic" Margin="0 5" IsChecked="{x:Bind settingsViewModel.IsAcrylic,Mode=OneWay}" Click="{x:Bind settingsViewModel.CheckBox_IsAcrylic_Click}">
+            </CheckBox>
+            <TextBlock x:Uid="Settings_About" Style="{ThemeResource SubtitleTextBlockStyle}" />
+            <StackPanel Margin="0 5">
+                <TextBlock Text="{x:Bind settingsViewModel.VersionDescription, Mode=OneWay}" Style="{ThemeResource BodyTextBlockStyle}" />
+
+                <HyperlinkButton x:Uid="SettingsPage_PrivacyTermsLink" Margin="0 5" />
+                <HyperlinkButton x:Uid="SettingsPage_GithubLink" Margin="0 5" />
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

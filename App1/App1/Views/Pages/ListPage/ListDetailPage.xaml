@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="App1.Views.Pages.ListPage.ListDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:models="using:App1.Models"
+    xmlns:views1="using:App1.Views.Pages.ListPage">
+
+    <Page.Resources>
+        <DataTemplate x:Key="ItemTemplate" x:DataType="models:ListModel">
+            <Grid Height="60" Tag="{x:Bind Url,Mode=OneWay}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel
+                    Grid.Column="1"
+                    Margin="0 5"
+                    VerticalAlignment="Center">
+                    <TextBlock Text="{x:Bind Title,Mode=OneWay}" />
+                    <TextBlock Text="{x:Bind Url,Mode=OneWay}"  />
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="DetailsTemplate">
+            <Grid>
+                <views1:ListDetailDetailControl/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid x:Name="root" x:FieldModifier="public">
+        <controls:ListDetailsView
+            x:Name="ListDetailsViewControl"
+            BackButtonBehavior="Automatic"
+            Background="Transparent"
+            BorderBrush="Transparent"
+            x:DefaultBindMode="OneWay"
+            x:FieldModifier="public"
+            SelectionChanged="ListDetailsViewControl_SelectionChanged"
+            DetailsTemplate="{StaticResource DetailsTemplate}"
+            ItemTemplate="{StaticResource ItemTemplate}"/>
+    </Grid>
+</Page>

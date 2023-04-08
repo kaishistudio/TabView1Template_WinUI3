@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="App1.Templates.Views.TabView1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="root" x:FieldModifier="public" Loaded="root_Loaded">
+        <TabView x:Name="Tabs"  
+            Background="Transparent" 
+            VerticalAlignment="Stretch"
+            Loaded="{x:Bind tabView1View.TabViewWindowingSamplePage_Loaded}"
+            AddTabButtonClick="{x:Bind tabView1View.Tabs_AddTabButtonClick}"
+            TabCloseRequested="{x:Bind tabView1View.Tabs_TabCloseRequested}"
+            AllowDropTabs="True"
+            CanDragTabs="True"
+            CanReorderTabs="True"
+            TabItemsChanged="{x:Bind tabView1View.Tabs_TabItemsChanged}"
+            TabDroppedOutside="{x:Bind tabView1View.Tabs_TabDroppedOutside}">
+            <TabView.TabStripHeader>
+                <Grid x:Name="ShellTitleBarInset" Loaded="{x:Bind tabView1View.ShellTitleBarInset_Loaded}"/>
+            </TabView.TabStripHeader>
+            <TabView.TabStripFooter>
+                <Grid x:Name="CustomDragRegion"  Loaded="{x:Bind tabView1View.CustomDragRegion_Loaded}"/>
+            </TabView.TabStripFooter>
+        </TabView>
+    </Grid>
+</Page>

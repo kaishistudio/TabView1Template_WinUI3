@@ -1,0 +1,28 @@
+<UserControl
+    x:Class="App1.Views.Pages.ListPage.ListDetailDetailControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:models="using:App1.Models"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel HorizontalAlignment="Left">
+                <ListView  x:Name="lv_detail"
+                        RelativePanel.AlignTopWithPanel="True"
+                        Margin="0 5"
+                        RelativePanel.RightOf="itemHero" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate  x:DataType="models:ListModel">
+                            <StackPanel  Orientation="Vertical" Margin="0,10,0,10">
+                                <TextBlock Text="{x:Bind Title,Mode=OneWay}" TextWrapping="Wrap" FontSize="30" FontWeight="Bold"/>
+                                <TextBlock Text="{x:Bind Way,Mode=OneWay}" TextWrapping="Wrap"  FontSize="14" FontWeight="Normal"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
