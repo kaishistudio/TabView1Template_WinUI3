@@ -124,7 +124,7 @@
     <value>Main</value>
   </data>
   <data name="Settings_Theme.Text" xml:space="preserve">
-    <value>Theme</value>
+    <value>主题</value>
   </data>
   <data name="Settings_Theme_Light.Content" xml:space="preserve">
     <value>Light</value>
@@ -142,16 +142,16 @@
     <value>https://github.com/kaishistudio/Privacy-Policy/blob/master/en.md</value>
   </data>
   <data name="Settings_Title.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>设置</value>
   </data>
   <data name="Cancle" xml:space="preserve">
-    <value>Cancle</value>
+    <value>取消</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>OK</value>
+    <value>确认</value>
   </data>
   <data name="Setting" xml:space="preserve">
-    <value>Settings</value>
+    <value>设置</value>
   </data>
   <data name="SettingsPage_GithubLink.Content" xml:space="preserve">
     <value>Github</value>
@@ -160,27 +160,27 @@
     <value>https://github.com/kaishistudio/TabView1Template_WinUI3</value>
   </data>
   <data name="Settings_About.Text" xml:space="preserve">
-    <value>About</value>
+    <value>关于</value>
   </data>
   <data name="Settings_history.Text" xml:space="preserve">
-    <value>History:</value>
+    <value>历史记录：</value>
   </data>
   <data name="Home" xml:space="preserve">
-    <value>Home</value>
+    <value>主页</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Delete</value>
+    <value>删除</value>
   </data>
   <data name="IsAcrylic.Content" xml:space="preserve">
-    <value>Acrylic Background</value>
+    <value>亚克力背景</value>
   </data>
   <data name="Settings_Personalization.Text" xml:space="preserve">
-    <value>Personalization</value>
+    <value>个性化</value>
   </data>
   <data name="List" xml:space="preserve">
-    <value>List</value>
+    <value>列表</value>
   </data>
   <data name="tb_setting.Text" xml:space="preserve">
-    <value>Settings</value>
+    <value>设置</value>
   </data>
 </root>
